@@ -90,7 +90,7 @@ toDouble _ = 0.0
 toBlockLines :: [[Word8]] -> [String]
 toBlockLines [] = []
 toBlockLines (x1:x2:xs) = zipWith toBlock x1 x2 : toBlockLines xs
-toBlockLines [x] = [map (`toBlock` 0) x]
+toBlockLines [x] = [map (`toBlock` 1) x]
 
 toBlock :: Word8 -> Word8 -> Char
 toBlock a b = case (a, b) of
